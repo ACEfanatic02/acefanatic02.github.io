@@ -3,11 +3,6 @@
 
 <head>
   
-
-  
-  
-
-
   <meta charset="utf-8">
 
 
@@ -16,7 +11,8 @@
 
 
   
-    
+    <meta name="description" content="Texture block compression is a critical component of real-time rendering. Reducing the size of textures saves download time, disk space, memory, and GPU bandwidth. With a few exceptions (pixel art, some UI elements), it&rsquo;s a reasonable expectation that all textures should be compressed to maximize these benefits.
+It&rsquo;s important, therefore, to understand how texture block compression works at a high level. What formats work best for base colors versus normal maps versus some arbitrary packed material data?">
   
 
 
@@ -29,13 +25,11 @@
 
 
 <meta name="generator" content="Hugo 0.121.1">
-  <title>Devfault v2</title>
-  <link rel="canonical" href="https://acefanatic02.github.io/">
+  <title>An Introduction To BCn Texture Compression, Part 1: BC4 | Devfault v2</title>
+  <link rel="canonical" href="https://acefanatic02.github.io/posts/intro_bcn_part1/">
 
 
 
-
-  <link rel="alternate" type="application/rss+xml" href="/index.xml" title="Devfault v2">
 
   
 
@@ -47,25 +41,8 @@
 
 
   
-
-  
-    
-    
-    
-    
     
   
-    
-    
-    
-      
-      
-    
-    
-    
-  
-
-
   
   <link rel="stylesheet" href="/css/base.min.2319cf9fece58247a471ab5aa45e75133ecd35b25017de77acaf299ef081c705.css" integrity="sha256-IxnPn&#43;zlgkekcatapF51Ez7NNbJQF953rK8pnvCBxwU=" crossorigin="anonymous">
 
@@ -112,10 +89,8 @@
       <div class="u-padding">
         
 
-  
-  
-    <article>
-      <header class="Heading">
+  <article>
+    <header class="Heading">
   <h2 class="Heading-title">
     <a class="Heading-link u-clickable" href="/posts/intro_bcn_part1/" rel="bookmark">An Introduction To BCn Texture Compression, Part 1: BC4</a>
   </h2>
@@ -123,8 +98,7 @@
     <time datetime="2024-01-28T00:00:00Z">28 January, 2024</time>
   
 </header>
-      
-        <p>Texture block compression is a critical component of real-time rendering.  Reducing the size of textures saves download time, disk space, memory, and GPU bandwidth.  With a few exceptions (pixel art, some UI elements), it&rsquo;s a reasonable expectation that all textures should be compressed to maximize these benefits.</p>
+    <p>Texture block compression is a critical component of real-time rendering.  Reducing the size of textures saves download time, disk space, memory, and GPU bandwidth.  With a few exceptions (pixel art, some UI elements), it&rsquo;s a reasonable expectation that all textures should be compressed to maximize these benefits.</p>
 <p>It&rsquo;s important, therefore, to understand how texture block compression works at a high level.  What formats work best for base colors versus normal maps versus some arbitrary packed material data?  What tradeoffs can be expected between quality, size, and compression time?  That is not the topic of this post; Nathan Reed has <a href="https://www.reedbeta.com/blog/understanding-bcn-texture-compression-formats/">an excellent writeup</a> on the various BCn texture formats and there&rsquo;s no need to duplicate it here.</p>
 <p>Instead, this series is going to dig into the next level of understanding.  Sometimes it&rsquo;s not enough to treat the actual compression process as a black box.  Maybe you need to compress textures at runtime on the GPU, or modify the compression to account for a different error term (e.g., error after RGBM decoding). Maybe you need to investigate non-determinism in your texture import pipeline.  Or maybe you&rsquo;re just curious about the techniques involved.</p>
 <p>So you go open up the source of your compression library, and&hellip;</p>
@@ -510,8 +484,7 @@
 <p>There is much more to cover even with BC4, so expect a followup post soon discussing how to squeeze out more quality <em>without</em> resorting to brute force.</p>
 <p>Until then, thanks for reading!</p>
 
-      
-      
+    
 
 
   
@@ -542,61 +515,10 @@
     
   </footer>
 
-    </article>
-    
-      <div class="Divider"></div>
-    
-  
-    <article>
-      <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="/posts/hello-world/" rel="bookmark">Hello, World!</a>
-  </h2>
-  
-    <time datetime="2024-01-28T00:00:00Z">28 January, 2024</time>
-  
-</header>
-      
-        <p>New blog, hurray!  Working on the <a href="https://www.velanstudios.com/post/knockout-city-frame-breakdown">Knockout City frame breakdown</a> at work reminded of just how much I miss long-form technical writing.  (As well as how <em>very</em> rusty I am.)</p>
-<p>This is a clean break from <a href="https://devfault.wordpress.com/">my old blog</a> (free-tier Wordpress, adblocker <em>highly</em> recommended) for a few reasons.  First:  I dislike Wordpress in general; the editor is not very friendly to code.  I don&rsquo;t need a comment system, and do not want to deal with moderation.  In addition, I want to shift focus a bit to include some more educational posts, rather than just &lsquo;project reports&rsquo;.  There&rsquo;s also the small matter of having included my deadname in my WP username.</p>
-<p>So, new blog.  Using Hugo on Github Pages, like pretty much everyone else at this point.  Straighforward and kinda boring, which is exactly how it should be.</p>
-<p>While there is no comment system on here, I&rsquo;m always open to discussing things on <a href="https://mastodon.gamedev.place/@ataylor">Mastodon</a>!</p>
-<p>Meta things are boring.  Onwards!</p>
-
-      
-      
-
-
-  
-
-  
-
-
-
-
-
-  <footer>
-    
-      
-    
-      
-        <ul class="Tags">
-          
-            <li class="Tags-item u-background">
-              <a class="Tags-link u-clickable" href="/tags/meta/" rel="tag">meta</a>
-            </li>
-          
-        </ul>
-      
-    
-  </footer>
-
-    </article>
     
   
 
-  
-
+  </article>
 
 
       </div>
